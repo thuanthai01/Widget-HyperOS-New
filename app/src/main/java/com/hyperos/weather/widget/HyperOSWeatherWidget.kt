@@ -1,9 +1,3 @@
-
-/*
- * HyperOS 2 Glassmorphism Weather Widget Provider (4x2 Size)
- * Created for Android 12+ / Xiaomi HyperOS 2
- */
-
 package com.hyperos.weather.widget
 
 import android.content.Context
@@ -26,7 +20,7 @@ import java.util.*
 
 class HyperOSWeatherWidget : GlanceAppWidget() {
 
-    override async fun provideGlance(context: Context, id: GlanceId) {
+    override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
             WidgetContent()
         }
@@ -38,7 +32,7 @@ class HyperOSWeatherWidget : GlanceAppWidget() {
         val currentDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
         val dayName = SimpleDateFormat("EEEE", Locale("vi", "VN")).format(Date())
         
-        // Root Frosted Glass Container (4x2 Aspect Ratio)
+        // Frosted Glass Container (4x2 Aspect Ratio)
         Column(
             modifier = GlanceModifier
                 .fillMaxSize()
@@ -128,4 +122,3 @@ class HyperOSWeatherWidget : GlanceAppWidget() {
         }
     }
 }
-                    
